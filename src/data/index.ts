@@ -6,6 +6,10 @@ export function tx<T>(lang: Lang, value: Localized<T>): T {
   return value[lang]
 }
 
+export function publicAsset(path: string) {
+  return `${import.meta.env.BASE_URL}${path.replace(/^\/+/, "")}`
+}
+
 export type NavLink = {
   id: string
   label: Localized
@@ -82,49 +86,49 @@ export const selectedVideos: SelectedVideo[] = [
 
 export const galleryImages = [
   {
-    src: "/images/gallery/gallery-01.png",
+    src: publicAsset("images/gallery/gallery-01.png"),
     alt: {
       en: "Stefano Accardo with a fellow performer at a theatre event",
       it: "Stefano Accardo con un collega durante un evento teatrale",
     },
   },
   {
-    src: "/images/gallery/gallery-02.png",
+    src: publicAsset("images/gallery/gallery-02.png"),
     alt: {
       en: "Cast, crew and audience gathered in the theatre after a performance",
       it: "Compagnia, staff e pubblico riuniti in teatro dopo lo spettacolo",
     },
   },
   {
-    src: "/images/gallery/gallery-03.png",
+    src: publicAsset("images/gallery/gallery-03.png"),
     alt: {
       en: "Company curtain call on a lit stage",
       it: "Saluti finali della compagnia sul palco illuminato",
     },
   },
   {
-    src: "/images/gallery/gallery-04.png",
+    src: publicAsset("images/gallery/gallery-04.png"),
     alt: {
       en: "Stefano Accardo on stage with a microphone",
       it: "Stefano Accardo sul palco con un microfono",
     },
   },
   {
-    src: "/images/gallery/gallery-05.png",
+    src: publicAsset("images/gallery/gallery-05.png"),
     alt: {
       en: "Stefano Accardo in a manga shop, kneeling with arms open in front of the shelves",
       it: "Stefano Accardo in una fumetteria, in ginocchio a braccia aperte davanti agli scaffali",
     },
   },
   {
-    src: "/images/gallery/gallery-06.png",
+    src: publicAsset("images/gallery/gallery-06.png"),
     alt: {
       en: "Two performers posing on stage in contrasting yellow and black costumes",
       it: "Due performer in posa sul palco in costumi giallo e nero a contrasto",
     },
   },
   {
-    src: "/images/gallery/gallery-07.png",
+    src: publicAsset("images/gallery/gallery-07.png"),
     alt: {
       en: "Boom microphone recording an outdoor interview in a park",
       it: "Registrazione con microfono boom di un'intervista all'aperto in un parco",
@@ -177,7 +181,7 @@ export const actingCredits: ActingCredit[] = [
       en: ["Special background appearance", "Director: Ric Roman Waugh"],
       it: ["Figurazione speciale", "Regia: Ric Roman Waugh"],
     },
-    still: "/images/acting/greenland/greenland-02.jpg",
+    still: publicAsset("images/acting/greenland/greenland-02.jpg"),
     stillAlt: {
       en: "Stefano Accardo on the set of Greenland 2: Migration",
       it: "Stefano Accardo sul set di Greenland 2: Migration",
@@ -193,7 +197,7 @@ export const actingCredits: ActingCredit[] = [
       en: ["Short film", "Role: Beppe", "Director: Matteo Piacenti"],
       it: ["Cortometraggio", "Ruolo: Beppe", "Regia: Matteo Piacenti"],
     },
-    still: "/images/acting/acquallegoria/acquallegoria-01.png",
+    still: publicAsset("images/acting/acquallegoria/acquallegoria-01.png"),
     stillAlt: {
       en: "Scene from Acquallegoria: two characters facing each other in a kitchen",
       it: "Scena da Acquallegoria: due personaggi uno di fronte all'altro in cucina",
@@ -225,7 +229,7 @@ export const actingCredits: ActingCredit[] = [
         "Esperienza teatrale precedente",
       ],
     },
-    still: "/images/acting/goffredo/goffredo-01.png",
+    still: publicAsset("images/acting/goffredo/goffredo-01.png"),
     stillAlt: {
       en: "Stefano Accardo as Goffredo, in a flat cap and wool coat",
       it: "Stefano Accardo nel ruolo di Goffredo, con coppola e cappotto di lana",
@@ -429,9 +433,10 @@ export const copy = {
     email: "mailto:ziostenotv@gmail.com",
   },
   images: {
-    hero: "/images/hero/stefano-hero.jpg",
-    about: "/images/acting/headshots/stefano-headshot-01.jpg",
-    creator: "/images/creator/youtube-01.jpg",
-    logo: "/images/branding/logo.png",
+    hero: publicAsset("images/hero/stefano-hero.jpg"),
+    about: publicAsset("images/acting/headshots/stefano-headshot-01.jpg"),
+    creator: publicAsset("images/creator/youtube-01.jpg"),
+    logo: publicAsset("images/branding/logo.png"),
+    favicon: publicAsset("images/branding/favicon.png"),
   },
 }

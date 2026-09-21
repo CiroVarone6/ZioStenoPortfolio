@@ -33,6 +33,12 @@ function applyDocumentLang(lang: Lang) {
   if (ogLocale) {
     ogLocale.setAttribute("content", lang === "it" ? "it_IT" : "en_US")
   }
+
+  const ogImage = document.querySelector('meta[property="og:image"]')
+  if (ogImage) ogImage.setAttribute("content", copy.images.hero)
+
+  const icon = document.querySelector('link[rel="icon"]')
+  if (icon) icon.setAttribute("href", copy.images.favicon)
 }
 
 export default function LanguageProvider({ children }: { children: ReactNode }) {
