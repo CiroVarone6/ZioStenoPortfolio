@@ -1,5 +1,5 @@
-import { useState, type MouseEvent } from "react"
-import { AnimatePresence, motion } from "framer-motion"
+import { useEffect, useState, type MouseEvent } from "react"
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion"
 import { HiOutlineMenuAlt3, HiX } from "react-icons/hi"
 
 import { copy, navLinks, tx, type Lang } from "../../data"
@@ -43,9 +43,35 @@ const LanguageSwitcher = ({ id }: { id: string }) => {
   )
 }
 
+const SCROLL_REVEAL_PX = 40
+
 const Navbar = () => {
   const [open, setOpen] = useState(false)
+  const [visible, setVisible] = useState(false)
+  const shouldReduceMotion = useReducedMotion()
   const { lang } = useLanguage()
+
+  useEffect(() => {
+    const reveal = () => setVisible(true)
+
+    if (lenis.scroll > SCROLL_REVEAL_PX || window.scrollY > SCROLL_REVEAL_PX) {
+      reveal()
+      return
+    }
+
+    const onScroll = ({ scroll }: { scroll: number }) => {
+      if (scroll > SCROLL_REVEAL_PX) {
+        reveal()
+        lenis.off("scroll", onScroll)
+      }
+    }
+
+    lenis.on("scroll", onScroll)
+
+    return () => {
+      lenis.off("scroll", onScroll)
+    }
+  }, [])
 
   const handleNavClick = (
     event: MouseEvent<HTMLAnchorElement>,
@@ -59,10 +85,13 @@ const Navbar = () => {
   return (
     <>
       <motion.header
-        initial={{ y: -160 }}
-        animate={{ y: 0 }}
-        transition={{ duration: 0.8 }}
-        className="fixed left-0 top-0 z-[60] w-full backdrop-blur-md"
+        initial={false}
+        animate={{ y: visible ? 0 : -160 }}
+        transition={{ duration: shouldReduceMotion ? 0 : 0.8 }}
+        aria-hidden={!visible}
+        className={`fixed left-0 top-0 z-[60] w-full backdrop-blur-md ${
+          visible ? "pointer-events-auto" : "pointer-events-none"
+        }`}
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-2 sm:py-3 lg:px-12">
           <a
