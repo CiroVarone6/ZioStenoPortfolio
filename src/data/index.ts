@@ -69,11 +69,11 @@ export const selectedVideos: SelectedVideo[] = [
     thumbnail: "https://i.ytimg.com/vi/IXnxNoZfqG4/hqdefault.jpg",
   },
   {
-    id: "pokemon-fire-red",
-    youtubeId: "d4eDl_aV6_8",
-    url: "https://www.youtube.com/watch?v=d4eDl_aV6_8",
-    title: "#2 CATTURA DI PIKACHU E PRIMA MEDAGLIA Pokémon Rosso Fuoco [gameplay ita]",
-    thumbnail: "https://i.ytimg.com/vi/d4eDl_aV6_8/hqdefault.jpg",
+    id: "imaginary-characters",
+    youtubeId: "Qc7fAayfrg8",
+    url: "https://www.youtube.com/watch?v=Qc7fAayfrg8",
+    title: "Perché amiamo personaggi immaginari?",
+    thumbnail: "https://i.ytimg.com/vi/Qc7fAayfrg8/hqdefault.jpg",
   },
   {
     id: "pokemon-trade",
