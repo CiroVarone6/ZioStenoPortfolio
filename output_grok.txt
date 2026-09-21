@@ -1,0 +1,83 @@
+ZioSteno portfolio — refinement pass
+====================================
+
+Refinement only. No redesign of Hero, Navbar, language switching, Creator composition, Gallery layout, Contact, i18n or motion.
+
+Files modified
+--------------
+src/components/sections/Acting.tsx
+src/components/sections/About.tsx
+src/components/sections/Creator.tsx
+src/components/sections/Gallery.tsx
+src/data/index.ts
+output_grok.txt
+
+What changed in Acting
+----------------------
+Credits are no longer glass cards with pills.
+
+The section is now an editorial filmography:
+- one cinematic still
+- a list of credits with horizontal dividers
+- title in Bebas Neue, year aligned to the right (stacks under the title on small screens)
+- role / director / production notes as compact secondary text
+
+Profile is no longer a spec card. Height and languages sit as typographic labels (170 cm, Italian, English, French). Accents and training remain below as body copy.
+
+Factual credits are unchanged: Greenland 2 (special background appearance, Ric Roman Waugh, 2024), Acquallegoria (Beppe, Matteo Piacenti, 2025 short film), La famiglia Panini (comparsa, RAI, expected late 2026 / early 2027), Le vicende del buon Goffredo (Goffredo, 2014–15, Teatro Storchi / ERT).
+
+Greenland image
+---------------
+Selected: /images/acting/greenland/greenland-02.jpg
+
+Why:
+- greenland-01.jpg is a tall on-set portrait; the previous landscape crop cut to the torso
+- greenland-03.jpg has letterbox bars and a weaker frame
+- greenland-02.jpg is already landscape, face is fully visible, sunset landscape reads as a film still
+
+Crop: object-cover with object-[78%_center] on mobile and object-[72%_center] on desktop so the face stays in frame. Aspect 16/9 on small screens, 21/9 on md+.
+
+How About was shortened
+-----------------------
+Visible bio reduced by about 25–30%.
+
+Kept: ZioSteno identity, videogames / manga / pop culture, entertainment + emotion, ideation–writing–filming–editing, YouTube and short-form, Funside, four years of local journalism, creativity, storytelling, audience.
+
+Cut: repeated production phrasing and the longer closing sentence.
+
+Italian accents preserved (conosciuto, emozioni, ideazione, capacità, attenzione).
+
+Where spacing was tightened
+---------------------------
+About: pb-32 → pb-24 (lg:pb-28), top padding unchanged
+Acting: py-32 → py-24 (lg:py-28)
+Creator: py-32 → pt/pb-24 (lg: 28); Selected Videos kicker mt-24 → mt-16, mb-10 → mb-8
+Gallery: top padding py-32 → pt-24 (lg:pt-28)
+
+Hero, Contact and Navbar spacing were not touched.
+
+Video title typography
+----------------------
+Structure of the Selected Videos cards is unchanged (thumbnail, 01/02/03, arrow, link, hover).
+
+Title classes went from
+  text-xl md:text-3xl lg:text-4xl
+to
+  text-lg md:text-xl lg:text-2xl leading-snug
+
+so they wrap less and no longer compete with section headings.
+
+Build result
+------------
+npm run build → success (tsc -b && vite build)
+
+Lint result
+-----------
+npm run lint → success (0 errors)
+
+Verification
+------------
+- greenland-02.jpg served (HTTP 200); greenland-01 no longer in the DOM
+- Acting still uses dividers, not credit glass cards
+- EN default, language switcher still present
+- Hero CTA and Navbar still in the rendered page

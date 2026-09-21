@@ -1,0 +1,383 @@
+You are working on the existing Stefano Accardo / ZioSteno portfolio that has already been successfully adapted from the Midnight Rider template.
+
+This is a REFINEMENT PASS ONLY.
+
+Do NOT redesign the site.
+Do NOT change the application architecture.
+Do NOT rewrite sections that are already working well.
+
+The current implementation already has:
+
+- working EN / IT switching
+- working responsive navbar
+- working Hero
+- working Creator section
+- working Gallery
+- working Contact section
+- working animations
+- working Lenis / Reveal / ScrollProgress / Loader
+- successful build
+- successful lint
+
+Preserve all of the above unless a very small adjustment is strictly necessary to implement the refinements below.
+
+==================================================
+DO NOT TOUCH UNLESS NECESSARY
+==================================================
+
+Do not materially change:
+
+- Hero composition
+- Hero typography
+- Navbar structure
+- language selector behavior
+- Creator overall composition
+- YouTube/Twitch CTA styling
+- Gallery layout
+- Contact section
+- social links
+- i18n architecture
+- data architecture
+- motion system
+- existing dark cinematic visual language
+
+Do not add new dependencies unless absolutely necessary.
+
+==================================================
+GOAL
+==================================================
+
+Refine the current portfolio so it feels less like a card-based dashboard and more like a cinematic/editorial actor + creator portfolio.
+
+Focus specifically on:
+
+1. Acting section
+2. Greenland image treatment
+3. Acting profile presentation
+4. About copy length
+5. Vertical spacing
+6. Selected Videos typography
+
+Do not perform unrelated refactoring.
+
+==================================================
+1. ACTING SECTION — MAKE IT MORE EDITORIAL
+==================================================
+
+The current Acting section is visually the weakest part of the page because several credits are presented as large bordered/glass cards.
+
+This creates a UI/dashboard feeling that is inconsistent with the more cinematic/editorial character of the rest of the site.
+
+Keep all factual content exactly accurate, but redesign ONLY the presentation of the acting credits.
+
+Current credits include:
+
+- Greenland 2: Migration
+- Acquallegoria
+- La famiglia Panini
+- Le vicende del buon Goffredo
+
+Goal:
+make these credits feel more like an editorial filmography / actor portfolio section.
+
+Prefer:
+
+- strong typography
+- horizontal dividers
+- compact metadata
+- asymmetric composition
+- dates aligned elegantly
+- role/director metadata in smaller secondary text
+- less heavy card chrome
+- fewer large rounded boxes
+
+Avoid:
+
+- large dashboard cards
+- excessive borders
+- empty rectangles
+- repeated pill/badge containers
+- SaaS-style visual treatment
+
+A direction such as this is appropriate:
+
+GREENLAND 2: MIGRATION        2024
+Special background appearance
+Director: Ric Roman Waugh
+
+ACQUALLEGORIA                 2025
+Role: Beppe
+Director: Matteo Piacenti
+
+but adapt this concept to the existing Midnight Rider visual system rather than copying this text layout literally.
+
+Keep the section cinematic and minimal.
+
+==================================================
+2. GREENLAND IMAGE — FIX THE CROP
+==================================================
+
+The currently used Greenland image is cropped poorly and visually emphasizes the torso rather than presenting the subject well.
+
+Available Greenland images:
+
+/images/acting/greenland/greenland-01.jpg
+/images/acting/greenland/greenland-02.jpg
+/images/acting/greenland/greenland-03.jpg
+
+Inspect all three again.
+
+Choose the image and crop that provide the strongest composition.
+
+Priorities:
+
+- visible face when possible
+- natural composition
+- no awkward head/torso crop
+- no stretched image
+- no important subject cut off
+- strong cinematic framing
+
+Use object-position if necessary.
+
+Do not keep greenland-01.jpg simply because it is already implemented if another image works better.
+
+Do not use stock images or generated replacements.
+
+==================================================
+3. ACTING PROFILE — REDUCE THE "TECHNICAL CARD" FEEL
+==================================================
+
+The current "Profilo" block is too visually similar to a technical specification card.
+
+Keep the information:
+
+- height: 170 cm
+- Italian
+- English
+- French
+- ability to experiment with / imitate different accents
+- acting training
+- theatre workshop
+
+But present it more lightly and editorially.
+
+The goal is something closer to an actor profile rather than a software/specification panel.
+
+For example, information could be visually integrated as:
+
+170 CM
+ITALIAN
+ENGLISH
+FRENCH
+
+with training and accent information below using typography and spacing rather than a large glass card.
+
+Do not remove useful information.
+
+Do not invent proficiency levels for the languages.
+
+Do not invent specific accents.
+
+The current wording remains acceptable:
+
+Italian:
+"Capacità di sperimentare e imitare diversi accenti."
+
+English:
+"Comfortable experimenting with and imitating a variety of accents."
+
+==================================================
+4. ABOUT — SHORTEN THE BIO
+==================================================
+
+The current About copy is too long for the visual rhythm of the page.
+
+Reduce the visible biography by approximately 25–35%.
+
+Preserve the important factual ideas:
+
+- Stefano Accardo is known online as ZioSteno
+- content creator
+- videogames
+- manga
+- pop culture
+- entertainment + emotional/story reflection
+- he manages ideation, writing, filming and editing
+- YouTube + short-form content
+- previous social media manager / creator experience at Funside
+- four years of local journalism experience
+- creativity
+- storytelling
+- relationship with the audience
+
+Do not remove all professional context.
+
+Do not turn the About section into a generic inspirational statement.
+
+Keep it concise, natural and portfolio-oriented.
+
+Create both Italian and English versions.
+
+Ensure accents remain correct in Italian.
+
+==================================================
+5. VERTICAL SPACING — MAKE THE PAGE MORE COMPACT
+==================================================
+
+The current page has slightly too much vertical empty space between some sections.
+
+Reduce vertical spacing modestly, approximately 15–20% where it improves flow.
+
+Pay special attention to:
+
+- About → Acting
+- Acting/Profile → Creator
+- Selected Videos → Gallery
+
+Do NOT make the page cramped.
+
+Do NOT remove the breathing room that gives the design its cinematic feel.
+
+The goal is:
+
+slightly tighter
+faster to scan
+better for visitors arriving from a QR code on mobile
+
+Preserve section hierarchy.
+
+Do not globally reduce all spacing blindly.
+
+Adjust section-by-section.
+
+==================================================
+6. SELECTED VIDEOS — REDUCE TITLE DOMINANCE
+==================================================
+
+The Selected Videos cards work well visually and should remain structurally unchanged.
+
+Preserve:
+
+- thumbnail
+- numbering 01 / 02 / 03
+- arrow
+- card composition
+- interaction
+- links
+
+However, the video titles are currently slightly too large and visually compete with major section headings.
+
+Reduce the title font size / line-height enough to:
+
+- improve readability
+- reduce excessive wrapping
+- preserve hierarchy
+- keep section headings visually dominant
+
+Do not make titles small.
+
+Do not change thumbnail size unless needed for balance.
+
+==================================================
+RESPONSIVE CHECK
+==================================================
+
+After these changes, verify:
+
+- desktop
+- tablet
+- 430px
+- 390px
+- 375px
+- 320px
+
+Pay special attention to the redesigned Acting section.
+
+Ensure:
+
+- dates do not collide with titles
+- long titles wrap cleanly
+- no horizontal overflow
+- metadata remains readable
+- images crop well
+- profile information stacks elegantly
+- no excessive whitespace appears on mobile
+
+==================================================
+VISUAL CONSISTENCY
+==================================================
+
+Use the existing design language:
+
+- Bebas Neue
+- Inter
+- dark navy / black palette
+- blue accent
+- existing motion language
+- existing button language
+- existing container widths
+
+Do NOT introduce:
+
+- new gradients unless already part of the design
+- new glassmorphism styles
+- new font families
+- decorative noise
+- unnecessary icons
+- excessive badges
+- generic cards
+
+==================================================
+CONTENT ACCURACY
+==================================================
+
+Do not change the meaning of any existing acting credit.
+
+Do not invent:
+
+- new roles
+- new release dates
+- new production details
+- new language proficiency claims
+- new acting skills
+- new awards
+- new collaborations
+
+Keep all existing factual constraints.
+
+==================================================
+FINAL VALIDATION
+==================================================
+
+After implementing the refinements:
+
+1. run npm run build
+2. fix any TypeScript/build errors
+3. run npm run lint
+4. fix relevant lint issues introduced by these changes
+5. verify EN / IT switching still works
+6. verify no Italian accents were corrupted
+7. verify Greenland image path and crop
+8. verify Acting section on mobile
+9. verify Selected Videos on mobile
+10. verify no Hero/Navbar/Creator/Gallery/Contact regressions
+
+==================================================
+DELIVERABLE
+==================================================
+
+Modify the repository directly.
+
+After completion, give me a concise report with:
+
+- files modified
+- what changed in Acting
+- which Greenland image was selected and why
+- how About was shortened
+- where spacing was tightened
+- how video title typography was adjusted
+- build result
+- lint result
+
+Do not perform additional redesign work beyond the refinements above.
